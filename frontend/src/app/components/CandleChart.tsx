@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
+// import { CoinContext } from "../context/coinContext";
 
 export const options = {
   legend: "none",
   backgroundColor: {
-    fill: "#11a",
+    fill: "#1a1a1a",
   },
   candlestick: {
     fallingColor: { strokeWidth: 1, fill: "#FF4444", stroke: "#FF4444" },
@@ -23,6 +24,7 @@ export const options = {
     height: "80%",
     backgroundColor: {
       fill: "#1a1a1a",
+      rx: 10,
     },
   },
 };
@@ -31,6 +33,8 @@ const CandleChart = () => {
   const [chartData, setChartData] = useState<{
     prices: [number, number][];
   } | null>(null);
+
+  // const { allCoin } = useContext(CoinContext);
 
   useEffect(() => {
     async function fetchChartData() {
@@ -54,6 +58,8 @@ const CandleChart = () => {
     }
     fetchChartData();
   }, []);
+
+  console.log(chartData);
 
   const transformData = () => {
     if (!chartData?.prices) return [["Date", "Low", "Open", "Close", "High"]];
@@ -87,10 +93,10 @@ const CandleChart = () => {
   };
 
   return (
-    <div className="w-full h-[400px] bg-[#1a1a1a] p-4 rounded-lg">
+    <div className=" h-[330px] overflow-hidden bg-[#1a1a1a] w-[500px] rounded-xl border  border-[#384A61] p-2">
       <Chart
         chartType="CandlestickChart"
-        width="75%"
+        width="100%"
         height="100%"
         data={transformData()}
         options={options}

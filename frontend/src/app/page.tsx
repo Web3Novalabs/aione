@@ -37,7 +37,7 @@ export default function Home() {
           width="500"
           dark-mode="true"
           outlined="true"
-          coin-id="game-by-virtuals"
+          coin-id="solana"
           initial-currency="usd"
         ></gecko-coin-price-chart-widget>
       </div>
@@ -51,9 +51,9 @@ export default function Home() {
             return (
               <div
                 key={i}
-                className="flex flex-wrap bg-orange-600 text-emerald-600 p-6"
+                className="flex flex-wrap rounded-xl m-3 bg-[#5ce1e9] p-6"
               >
-                <div className="bg-blue-800 flex items-center space-x-5 p-3">
+                <div className=" text-[#000] flex text-lg items-center space-x-5 p-3">
                   <h1>{coin.market_cap_rank}</h1>
                   <Image
                     src={coin.image}
