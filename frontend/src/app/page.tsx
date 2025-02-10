@@ -1,12 +1,13 @@
 "use client";
 
 import { useContext } from "react";
+import Script from "next/script";
 import Navbar from "./components/Navbar";
 import { CoinContext } from "./context/coinContext";
 import Image from "next/image";
+import CandleChart from "./components/CandleChart";
 
 export default function Home() {
-  // const [data, setData] = useState([]);
   const { allCoin } = useContext(CoinContext);
   console.log(allCoin);
 
@@ -26,6 +27,24 @@ export default function Home() {
   return (
     <div className="">
       <Navbar />
+      <div>
+        <Script
+          src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"
+          strategy="lazyOnload"
+        ></Script>
+        <gecko-coin-price-chart-widget
+          locale="en"
+          width="500"
+          dark-mode="true"
+          outlined="true"
+          coin-id="game-by-virtuals"
+          initial-currency="usd"
+        ></gecko-coin-price-chart-widget>
+      </div>
+
+      <div className="my-6">
+        <CandleChart />
+      </div>
       <div className="flex justify-center items-center">
         <h1 className="text-white">
           {allCoin.map((coin, i) => {
