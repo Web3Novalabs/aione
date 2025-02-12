@@ -31,7 +31,7 @@ const ChatContextProvider = ({
   //main menu side bar
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   //chatType  = ai-chat | swap | account | analysis | active-agent
-  const [chatType, setChatType] = useState("chat");
+  const [chatType, setChatType] = useState("ai-chat");
   // chat history visibility state
   const [isHistoryOpen,setIsHistoryOpen] = useState(false)
 

@@ -117,7 +117,7 @@ export default function ChatInput() {
           />
           <button
             type="submit"
-            className=" bg-inherit py-2  px-4 rounded-md grid place-content-center"
+            className={`${chatInput.length === 0?"bg-inherit":"bg-[#72CCD7]"} py-2  px-4 rounded-md grid place-content-center`}
           >
             <SendIcon />
           </button>

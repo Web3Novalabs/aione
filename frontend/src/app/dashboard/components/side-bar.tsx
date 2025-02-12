@@ -18,6 +18,7 @@ export default function SideNavBar() {
   function chatTypeHandle(data: string) {
     setChatType(data);
   }
+  console.log(chatType)
   return (
     <nav
       className={`${
@@ -72,7 +73,7 @@ export default function SideNavBar() {
             chatType === "ai-chat"
               ? "bg-aqwaGreen border-[#F8F8F8]"
               : " bg-darkishBlue"
-          } bg-darkishBlue p-4 flex border border-transparent justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
+          } p-4 flex border border-transparent justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
           type="button"
           onClick={() => chatTypeHandle("ai-chat")}
         >
@@ -86,7 +87,7 @@ export default function SideNavBar() {
             chatType === "analysis"
               ? "bg-aqwaGreen border-[#F8F8F8]"
               : " bg-darkishBlue"
-          } bg-darkishBlue border border-transparent p-4  flex justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
+          } border border-transparent p-4  flex justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
           type="button"
           onClick={() => chatTypeHandle("analysis")}
         >
@@ -102,7 +103,7 @@ export default function SideNavBar() {
             chatType === "swap"
               ? "bg-aqwaGreen border-[#F8F8F8]"
               : " bg-darkishBlue"
-          } bg-darkishBlue p-4 flex border border-transparent justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
+          } p-4 flex border border-transparent justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
           type="button"
           onClick={() => chatTypeHandle("swap")}
         >
@@ -118,7 +119,7 @@ export default function SideNavBar() {
             chatType === "active-agent"
               ? "bg-aqwaGreen border-[#F8F8F8]"
               : " bg-darkishBlue"
-          } bg-darkishBlue p-4 flex border border-transparent justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
+          } p-4 flex border border-transparent justify-between items-center w-full rounded-[8px] transition-all duration-500 hover:bg-aqwaGreen mx-auto`}
           type="button"
           onClick={() => chatTypeHandle("active-agent")}
         >
@@ -129,6 +130,32 @@ export default function SideNavBar() {
             </span>
           </div>
         </button>
+
+        {chatType === "active-agent" && (
+          <div className="">
+            <div className="py-2 px-4 flex justify-between items-center cursor-pointer hover:bg-darkishBlue">
+              <div className="flex items-center gap-2">
+                <span className="bg-[#2D9CDB] w-[14px] h-[14px] rounded-full inline-block" />
+                <span>Swap token</span>
+              </div>
+              <span className="bg-[#27AE60] w-1 h-1 rounded-full inline-block" />
+            </div>
+            <div className="px-4 py-2 flex justify-between items-center cursor-pointer hover:bg-darkishBlue">
+              <div className="flex items-center gap-2">
+                <span className="bg-[#D8FFA1] w-[14px] h-[14px] rounded-full inline-block" />
+                <span>Info agent</span>
+              </div>
+              <span className="bg-[#27AE60] w-1 h-1 rounded-full inline-block" />
+            </div>
+            <div className="px-4 py-2 flex justify-between items-center cursor-pointer hover:bg-darkishBlue">
+              <div className="flex items-center gap-2">
+                <span className="bg-[#E5C8FF] w-[14px] h-[14px] rounded-full inline-block" />
+                <span>Token analysis agent</span>
+              </div>
+              <span className="bg-[#27AE60] w-1 h-1 rounded-full inline-block" />
+            </div>
+          </div>
+        )}
       </div>
       <button
         className={`bg-darkishBlue p-4 flex justify-between items-center rounded-[8px] transition-all duration-500 absolute bottom-4 left-3 ${
