@@ -1,15 +1,15 @@
 "use client";
 import { useContext } from "react";
 import { MessageSquare } from "lucide-react";
-import { ChatContext } from "../useContext/chatContex";
-import Swap from "../svg/swap";
-import SideNavBar from "./components/side-bar";
-import ChatInput from "./components/chat-input";
-import { Chatpage } from "./components/chat-page";
-import { useMessages } from "../useContext/message-context";
-import NewChat from "../svg/new-chat-icon";
-import AsideIcon from "../svg/aside-icon";
-import History from "./components/history";
+import { ChatContext } from "../../../useContext/chatContex";
+import Swap from "../../../svg/swap";
+import SideNavBar from "./side-bar";
+import ChatInput from "./chat-input";
+import { Chatpage } from "./chat-page";
+import { useMessages } from "../../../useContext/message-context";
+import NewChat from "../../../svg/new-chat-icon";
+import AsideIcon from "../../../svg/aside-icon";
+import History from "./history";
 const Chat = () => {
   const { chatType, isHistoryOpen, setIsHistoryOpen } = useContext(ChatContext);
   const { messages } = useMessages();
